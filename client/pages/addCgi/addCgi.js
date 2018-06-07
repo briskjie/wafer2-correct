@@ -2,7 +2,7 @@
 var qcloud = require('../../vendor/wafer2-client-sdk/index')
 var config = require('../../config')
 var util = require('../../utils/util.js')
-
+var header={'content-type':'application/x-www-form-urlencoded','cookie':wx.getStorageSync('sessionId')}//读取cookie
 Page({
     data: {
         requestResult: '',
@@ -14,6 +14,7 @@ Page({
         var that = this
         qcloud.request({
             url: `${config.service.host}/weapp/demo`,
+            header:header,
             login: false,
             success (result) {
                 util.showSuccess('请求成功完成')

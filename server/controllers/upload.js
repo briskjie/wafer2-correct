@@ -8,6 +8,7 @@ module.exports = async ctx => {
   var imageInfo={}
   imageInfo.imgUrl = imgUrl
   imageInfo.imgKey = imgKey
+  // imageInfo.openid = ctx.state.$wxInfo.userinfo.nickName
   await mysql("album").insert(imageInfo)//将上传图片保存到数据库
   // var res = await mysql("album").where('id', 1)
   ctx.state.data = imageInfo

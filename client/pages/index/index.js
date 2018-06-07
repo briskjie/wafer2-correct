@@ -23,6 +23,7 @@ Page({
             success(result) {
                 if (result) {
                     util.showSuccess('登录成功');
+                    // wx.setStorageSync('sessionId', result.)
                     that.setData({
                         userInfo: result,
                         logged: true
